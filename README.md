@@ -10,7 +10,7 @@ This will use gulp to build, reactify, and browserify the project so that it can
 
 
 # Helpful Links
-http://facebook.github.io/react/
-https://facebook.github.io/flux/
-http://gulpjs.com/
+* http://facebook.github.io/react/
+* https://facebook.github.io/flux/
+* http://gulpjs.com/
  
