@@ -1,5 +1,5 @@
 var Dispatcher = require('flux').Dispatcher;
-var store = require('./app/store/');
+var store = require('./app/stores/mainstore');
 
 // Create our dispatcher
 var dispatcher = new Dispatcher();

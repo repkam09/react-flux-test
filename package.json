@@ -4,7 +4,8 @@
   "description": "Testing React/Flux development",
   "main": "app.js",
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "flux": "^2.0.3"
   },
   "devDependencies": {
     "browserify": "^10.2.4",

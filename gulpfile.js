@@ -13,7 +13,7 @@ process.chdir(src);
 
 var createBrowserify = function () {
 	return browserify({
-		entries : './index.js',
+		entries : './app.js',
 		extensions : ['.jsx'], // Needed to find the React JSX source files.
 		transform : [reactify],
 		cache : {}, // Required by watchify.
@@ -23,9 +23,9 @@ var createBrowserify = function () {
 };
 
 var doBrowserify = function (bundle) {
-	return bundle.pipe(source('index.js'))
+	return bundle.pipe(source('app.js'))
 	.pipe(buffer())
-	.pipe(rename('application.js'))
+	.pipe(rename('app.js'))
 	.pipe(gulp.dest(output));
 };
 
