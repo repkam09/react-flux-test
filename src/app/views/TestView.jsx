@@ -3,7 +3,7 @@ var store = require('../stores/mainstore');
 
 module.exports = React.createClass({
 	getInitialState: function() {
-		return { myVal: 0};
+		return { displayString: "Hello World"};
 	},
 	
 	componentWillMount: function(){
@@ -11,17 +11,22 @@ module.exports = React.createClass({
 	},
 
 	componentDidMount: function() {
-		
+		console.log("Got an event, some_event");
+		store.on('some_event', this.handleEvent);
 	},
 
 	componentWillUnmount: function() {
 		
 	},
+	
+	handleEvent: function() {
+		this.setState({displayString: "Hello World, new event!"});
+	},
 
 	render: function() {
 		return (
 			<div>
-				<p> Hello World!</p>
+				<p>{this.state.displayString}</p>
 			</div>
 		);
 	}

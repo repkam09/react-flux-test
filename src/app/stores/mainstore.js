@@ -19,8 +19,11 @@ MainStore.prototype.actionHandler = function (action) {
 	return retval;
 };
 
-function init() {
+function init(){
 	log.log("Init!");
+	_store.emit('some_event');
 }
 
-module.exports = new MainStore();
+var _store = new MainStore();
+
+module.exports = _store;
