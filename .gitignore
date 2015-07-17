@@ -17,3 +17,4 @@ Thumbs.db
 /build/
 npm-debug.log
 /node_modules/
+start-server.bat
