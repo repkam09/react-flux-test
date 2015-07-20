@@ -3,19 +3,22 @@ var store = require('../stores/mainstore');
 
 module.exports = React.createClass({
 	getInitialState: function() {
-		return { displayString: "Hello World"};
+		return { displayString: "Hello World", someNumber: 1, someArray: ['test', 'test2', 'test3']};
 	},
 	
 	componentWillMount: function(){
-		
+		// Do something when the react component is about to be displayed for the first time
+		// Display one of our initial state values that was defined above:
+		console.log(this.state.displayString);
 	},
 
 	componentDidMount: function() {
+		// Do something when the react component is first drawn to the screen
 		store.on('some_event', this.handleEvent);
 	},
 
 	componentWillUnmount: function() {
-		
+		// Do something when the react component is no longer needed
 	},
 	
 	handleEvent: function() {
