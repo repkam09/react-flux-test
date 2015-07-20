@@ -32,8 +32,7 @@ module.exports = React.createClass({
 				<p>{reactStrings}</p>
 				<p className="redText" > But we can use JavaScript variables, like above! </p>
 				<button onClick={this.handleClick} > Click on me </button>
-				<p> Number of clicks is {this.state.someNumber} </p>
-				<button onClick={this.handleClickView} > Next View </button>
+				<p> Number of clicks is {this.state.someNumber} </p>				
 			</div>
 		);
 	},
@@ -41,9 +40,5 @@ module.exports = React.createClass({
 	handleClick: function() {
 		var upCounter = this.state.someNumber + 1;
 		this.setState({someNumber: upCounter});
-	},
-	
-	handleClickView: function() {
-		dispatcher.dispatch(dispatcher.action.GO_NEXT_VIEW);
 	}
 });
