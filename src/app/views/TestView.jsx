@@ -24,10 +24,12 @@ module.exports = React.createClass({
             return (<div><p> {string} </p></div>);
         });
 		
-		return (<div>
-					<p> This is some JSX here. It looks just like HTML </p>
-					<p>{reactStrings}</p>
-					<p> But we can use JavaScript variables, like above! </p>
-				</div>);
+		return (
+			<div>
+				<h3> This is some JSX here. It looks just like HTML </h3>
+				<p>{reactStrings}</p>
+				<p className="redText" > But we can use JavaScript variables, like above! </p>
+			</div>
+		);
 	}
 });
