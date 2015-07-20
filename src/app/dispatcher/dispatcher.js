@@ -28,7 +28,7 @@ MyDispatcher.prototype.register = function(self) {
 // Supported actions in the dispatcher
 MyDispatcher.prototype.action =  Object.freeze({
 	INIT: 'init',
-	GO_NEXT_VIEW: 'go_next_view'
+	LANGUAGE: 'language'
 });
 
 module.exports = new MyDispatcher();

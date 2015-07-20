@@ -1,8 +1,10 @@
 var React = require('react');
 var dispatcher = require('../dispatcher/dispatcher');
+var mainstore = require('../stores/mainstore');
+var localestore = require('../stores/localestore');
 
 
-module.exports = React.createClass({
+module.exports = React.createClass({	
 	getInitialState: function() {
 		return { displayString: "Hello World", someNumber: 0, someArray: ['test', 'test2', 'test3']};
 	},
@@ -26,19 +28,25 @@ module.exports = React.createClass({
             return (<img src={string} width="100" height="100"> </img>);
         });
 		
+		var head_str = localestore.getTextString("head_str");
+		var red_str = localestore.getTextString("red_str");
+		var btn_str = localestore.getTextString("btn_str");
+		var clk_str = localestore.getTextString("clk_str");
+		
 		return (
 			<div>
-				<h3> This is some JSX here. It looks just like HTML </h3>
+				<h3> {head_str} </h3>
 				<p>{reactStrings}</p>
-				<p className="redText" > But we can use JavaScript variables, like above! </p>
-				<button onClick={this.handleClick} > Click on me </button>
-				<p> Number of clicks is {this.state.someNumber} </p>				
+				<p className="redText" > {red_str} </p>
+				<button onClick={this.handleClick} > {btn_str} </button>
+				<p> {clk_str} {this.state.someNumber} </p>				
 			</div>
 		);
 	},
 	
 	handleClick: function() {
 		var upCounter = this.state.someNumber + 1;
+		dispatcher.dispatch({type: dispatcher.action.LANGUAGE});
 		this.setState({someNumber: upCounter});
 	}
 });
