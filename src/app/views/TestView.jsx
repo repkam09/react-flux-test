@@ -14,16 +14,10 @@ module.exports = React.createClass({
 
 	componentDidMount: function() {
 		// Do something when the react component is first drawn to the screen
-		store.on('some_event', this.handleEvent);
 	},
 
 	componentWillUnmount: function() {
 		// Do something when the react component is no longer needed
-	},
-	
-	handleEvent: function() {
-		console.log("Got an event, some_event");
-		this.setState({displayString: "Hello World, new event!"});
 	},
 
 	render: function() {
