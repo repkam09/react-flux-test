@@ -21,9 +21,9 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
-		var urlArray = ['One Fish', 'Two Fish', 'Red Fish', 'Blue Fish'];
+		var urlArray = ['http://i.imgur.com/cqZK11x.jpg', 'http://i.imgur.com/D1TzTBZ.jpg', 'http://i.imgur.com/QuqPveo.jpg', 'http://i.imgur.com/zrAxG9E.jpg'];
 		var reactStrings = urlArray.map(function(string) {
-            return (<div><p> {string} </p></div>);
+            return (<img src={string} width="100" height="100"> </img>);
         });
 		
 		return (
