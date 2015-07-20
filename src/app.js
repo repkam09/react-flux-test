@@ -8,7 +8,6 @@ dispatcher.register(function (action) {
 	store.actionHandler(action);
 });
 
-
 var jsx_view = require('./app/views/TestView');
 var app = React.createElement(jsx_view);
 React.render(app, document.getElementById('app'));

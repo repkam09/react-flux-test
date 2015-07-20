@@ -10,7 +10,7 @@ util.inherits(MainStore, EventEmitter);
 
 MainStore.prototype.actionHandler = function (action) {
 	var retval = null;
-	log.log("Action: " + action.type);
+	log.log("Got an action: " + action.type);
 	switch (action.type) {
 		case 'init':
 			retval = init();
@@ -25,5 +25,4 @@ function init(){
 }
 
 var _store = new MainStore();
-
 module.exports = _store;
