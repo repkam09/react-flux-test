@@ -2,6 +2,7 @@ var React = require('react');
 var store = require('../stores/mainstore');
 
 module.exports = React.createClass({
+	
 	getInitialState: function() {
 		return {};
 	},
