@@ -9,4 +9,4 @@ var app = React.createElement(jsx_view);
 React.render(app, document.getElementById('app'));
 
 // Kick everything off
-dispatcher.dispatch(dispatcher.action.INIT);
+dispatcher.dispatch({type: dispatcher.action.INIT});

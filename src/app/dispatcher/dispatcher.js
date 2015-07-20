@@ -1,22 +1,34 @@
 var FluxDisp = require('flux').Dispatcher;
+var log = require('../stores/logging');
 
-// Create our dispatcher
+// Create an instance of the Facebook Flux dispatcher
 var dispatcher = new FluxDisp();
 
+// Create our own object dispatcher with our own interface
+function MyDispatcher() {
+		log.log("Created MyDispatcher in dispatcher.js");
+}
 
-function _dispatcher() { }
-
-_dispatcher.prototype.dispatch =  function(data) {
-	dispatcher.dispatch({type: data});	
+// Dispatch: sends an event to all of the registered stores
+MyDispatcher.prototype.dispatch =  function(data) {
+	if (data.type) {
+		log.log("Dispatch Action:" + data.type + ", Payload: " +  JSON.stringify(data));
+		dispatcher.dispatch({type: data.type, payload: data});
+	} else {
+		log.log("Dispatch Action: " + data);
+		dispatcher.dispatch({type: data});
+	}	
 };
 	
-_dispatcher.prototype.register = function(self) {
+// Registers a store with the dispatcher so that actions can be passed to it
+MyDispatcher.prototype.register = function(self) {
 	dispatcher.register(function (action) { self.actionHandler(action); });
 };
-	
-_dispatcher.prototype.action =  Object.freeze({
+
+// Supported actions in the dispatcher
+MyDispatcher.prototype.action =  Object.freeze({
 	INIT: 'init',
 	GO_NEXT_VIEW: 'go_next_view'
 });
 
-module.exports = new _dispatcher();
+module.exports = new MyDispatcher();

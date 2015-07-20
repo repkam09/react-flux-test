@@ -44,6 +44,6 @@ module.exports = React.createClass({
 	},
 	
 	handleClickView: function() {
-		dispatcher.dispatch(dispatcher.action.INIT);
+		dispatcher.dispatch(dispatcher.action.GO_NEXT_VIEW);
 	}
 });

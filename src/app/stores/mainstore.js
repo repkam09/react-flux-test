@@ -11,7 +11,7 @@ util.inherits(MainStore, EventEmitter);
 
 MainStore.prototype.actionHandler = function (action) {
 	var retval = null;
-	log.log("Got an action: " + action.type);
+	log.log("MainStore got an action: " + action.type);
 	switch (action.type) {
 		case dispatcher.action.INIT:
 			retval = init();
