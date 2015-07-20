@@ -1,5 +1,4 @@
 var React = require('react');
-var store = require('../stores/mainstore');
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -8,7 +7,6 @@ module.exports = React.createClass({
 	
 	componentWillMount: function(){
 		// Do something when the react component is about to be displayed for the first time
-		// Display one of our initial state values that was defined above:
 		console.log(this.state.displayString);
 	},
 
@@ -23,19 +21,13 @@ module.exports = React.createClass({
 	render: function() {
 		var urlArray = ['hello world', 'test string!', 'kodak alaris'];
 		var reactStrings = urlArray.map(function(string) {
-            return (
-				<div>
-					<p> {string} </p>
-				</div>
-			)
+            return (<div><p> {string} </p></div>);
         });
 		
-		return (
-			<div>
-				<p> This is some JSX here. It looks just like HTML </p>
-				<p>{reactStrings}</p>
-				<p> But we can use JavaScript variables, like above! </p>
-			</div>
-		);
+		return (<div>
+					<p> This is some JSX here. It looks just like HTML </p>
+					<p>{reactStrings}</p>
+					<p> But we can use JavaScript variables, like above! </p>
+				</div>);
 	}
 });
