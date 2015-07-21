@@ -22,8 +22,8 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
-		var urlArray = ['http://i.imgur.com/cqZK11x.jpg', 'http://i.imgur.com/D1TzTBZ.jpg',
-						'http://i.imgur.com/QuqPveo.jpg', 'http://i.imgur.com/zrAxG9E.jpg'];
+		var urlArray = ['https://i.imgur.com/cqZK11x.jpg', 'https://i.imgur.com/D1TzTBZ.jpg',
+						'https://i.imgur.com/QuqPveo.jpg', 'https://i.imgur.com/zrAxG9E.jpg'];
 						
 		var reactStrings = urlArray.map(function(string) {
 			// Create a sub react components to represent an image with some props

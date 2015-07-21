@@ -30,6 +30,7 @@ function getFlickrImages() {
 	// Assign handlers immediately after making the request,
 	// and remember the jqXHR object for this request
 	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");
+	//ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=kodak");
 }
 
 function ajaxGet(req_url) {

@@ -14,14 +14,16 @@ $(document).ready(function() {
 	
 });
 
-function btnTestView() {
+function btnTestView(event) {
+	event.preventDefault();
 	var view = require('./app/views/TestView');
 	reactGoView(view);
 	
 	dispatcher.dispatch({type: dispatcher.action.TEST_VIEW});
 }
 
-function btnFlickrView() {
+function btnFlickrView(event) {
+	event.preventDefault();
 	var view = require('./app/views/FlickrView');
 	reactGoView(view);
 	
@@ -29,7 +31,8 @@ function btnFlickrView() {
 }
 
 
-function btnMoveView() {
+function btnMoveView(event) {
+	event.preventDefault();
 	var view = require('./app/views/MoveView');
 	reactGoView(view);
 	
