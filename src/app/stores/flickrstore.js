@@ -4,7 +4,6 @@ var log = require('./logging');
 var util = require('util');
 var dispatcher = require('../dispatcher/dispatcher');
 
-
 function FlickrStore() {
 	EventEmitter.call(this);
 }
@@ -23,17 +22,31 @@ FlickrStore.prototype.actionHandler = function (action) {
 };
 
 function getFlickrImages() {
-	// 
-	
 	// Assign handlers immediately after making the request,
 	// and remember the jqXHR object for this request
-	var jqxhr = $.ajax("https://api.flickr.com/services/feeds/photos_public.gne?format=json")
-		.done(function (result) {
-			alert("success = " + JSON.stringify(result));
-		})
-		.fail(function (error) {
-			alert("error = " + JSON.stringify(error));
-		});
+	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");
+}
+
+function ajaxGet(req_url) {
+	log.log("GET Request to " + req_url);
+	$.ajax({
+		method: "GET",
+		dataType: "jsonp",
+		url: req_url,
+	});
+}
+
+// Deal with the callback of the jsonp request. Grrr.
+window["jsonFlickrFeed"] = function (data) {
+	var array = data.items;
+	array.forEach(function(item){
+		var title = item.title;
+		var url = item.media.m;
+		
+		var newItem = {title: title, url: url};
+		
+		_store.emit('new_image', newItem);
+	});
 }
 
 var _store = new FlickrStore();

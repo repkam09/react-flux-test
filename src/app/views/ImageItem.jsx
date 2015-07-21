@@ -20,9 +20,7 @@ module.exports = React.createClass({
 
 	render: function() {		
 		return (
-			<div>
-			
-			</div>
+			<img src={this.props.url} width="200" height="200" ></img>
 		);
-	}s
+	}
 });
