@@ -32,21 +32,27 @@ module.exports = React.createClass({
 		var red_str = localestore.getTextString("red_str");
 		var btn_str = localestore.getTextString("btn_str");
 		var clk_str = localestore.getTextString("clk_str");
+		var chg_lng = localestore.getTextString("chg_lng");
 		
 		return (
 			<div>
-				<h3> {head_str} </h3>
+			<h3> {head_str} </h3>
 				<p>{reactStrings}</p>
 				<p className="redText" > {red_str} </p>
-				<button onClick={this.handleClick} > {btn_str} </button>
-				<p> {clk_str} {this.state.someNumber} </p>				
+			<button onClick={this.handleClick} > {btn_str} </button>
+			<p> {clk_str} {this.state.someNumber} </p>
+			<button onClick={this.toggleLanguage} > {chg_lng} </button>	
 			</div>
 		);
 	},
 	
 	handleClick: function() {
 		var upCounter = this.state.someNumber + 1;
-		dispatcher.dispatch({type: dispatcher.action.LANGUAGE});
 		this.setState({someNumber: upCounter});
+	},
+	
+	toggleLanguage: function() {
+		dispatcher.dispatch({type: dispatcher.action.LANGUAGE});
+		this.setState({});
 	}
 });

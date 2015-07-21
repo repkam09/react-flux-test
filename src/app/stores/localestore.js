@@ -10,24 +10,27 @@ var _localeNbt = 0;
 
 // Language sets. Written locally. Could be in another file.
 var en_us = {
-	head_str: "This is some JSX here. It looks just like HTML",
-	red_str: "But we can use JavaScript variables, like above!",
-	btn_str: "Click on me",
-	clk_str: "Number of clicks is "
+	head_str: 'This is some JSX here. It looks just like HTML',
+	red_str: 'But we can use JavaScript variables, like above!',
+	btn_str: 'Click on me',
+	clk_str: 'Number of clicks is ',
+	chg_lng: 'Change Language'
 };
 
 var en_es = {
-	head_str: "Esto es cierto JSX aquí . Se ve como HTML",
-	red_str: "Pero podemos utilizar variables de JavaScript , como la de arriba!",
-	btn_str: "Haga clic en mí",
-	clk_str: "Número de clics es "
+	head_str: 'Esto es cierto JSX aquí . Se ve como HTML',
+	red_str: 'Pero podemos utilizar variables de JavaScript , como la de arriba!',
+	btn_str: 'Haga clic en mí',
+	clk_str: 'Número de clics es ',
+	chg_lng: 'Cambiar Idioma'
 };
 
 var th_th = {
-	head_str: "นี่คือ JSX บางอย่างที่นี่ มัน มีลักษณะ เช่น HTML",
-	red_str: "แต่เราสามารถ ใช้ตัวแปร JavaScript, เหมือน ข้างต้น!",
-	btn_str: "คลิกที่ ฉัน",
-	clk_str: "จำนวนการคลิก คือ "
+	head_str: 'นี่คือ JSX บางอย่างที่นี่ มัน มีลักษณะ เช่น HTML',
+	red_str: 'แต่เราสามารถ ใช้ตัวแปร JavaScript, เหมือน ข้างต้น!',
+	btn_str: 'คลิกที่ ฉัน',
+	clk_str: 'จำนวนการคลิก คือ ',
+	chg_lng: 'เปลี่ยนภาษา'
 };
 
 var _localeTextData = {
@@ -44,7 +47,7 @@ util.inherits(LocaleStore, EventEmitter);
 
 LocaleStore.prototype.actionHandler = function (action) {
 	var retval = null;
-	log.log("LocaleStore got an action: " + action.type);
+	log.log('LocaleStore got an action: ' + action.type);
 	switch (action.type) {
 		case dispatcher.action.LANGUAGE:
 			retval = swapLanguage();
