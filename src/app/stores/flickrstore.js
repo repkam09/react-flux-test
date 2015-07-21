@@ -14,7 +14,7 @@ FlickrStore.prototype.actionHandler = function (action) {
 	var retval = null;
 	log.log("FlickrStore got an action: " + action.type);
 	switch (action.type) {
-		case dispatcher.action.INIT:
+		case dispatcher.action.FLICKR_VIEW:
 			retval = getFlickrImages();
 			break;
 	}

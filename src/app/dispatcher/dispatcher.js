@@ -27,7 +27,8 @@ MyDispatcher.prototype.register = function(self) {
 
 // Supported actions in the dispatcher
 MyDispatcher.prototype.action =  Object.freeze({
-	INIT: 'init',
+	TEST_VIEW: 'test_view',
+	FLICKR_VIEW: 'flickr_view',
 	LANGUAGE: 'language'
 });
 

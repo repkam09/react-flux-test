@@ -18,7 +18,7 @@ MainStore.prototype.actionHandler = function (action) {
 	var retval = null;
 	log.log("MainStore got an action: " + action.type);
 	switch (action.type) {
-		case dispatcher.action.INIT:
+		case dispatcher.action.TEST_VIEW:
 			retval = init();
 			break;
 	}

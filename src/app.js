@@ -6,11 +6,24 @@ dispatcher.register(require('./app/stores/mainstore'));
 dispatcher.register(require('./app/stores/localestore'));
 dispatcher.register(require('./app/stores/flickrstore'));
 
-// Select the view to display
-var view = require('./app/views/TestView');
-//var view = require('./app/views/FlickrView');
-var app = React.createElement(view);
-React.render(app, document.getElementById('app'));
+// button handlers
+$(document).ready(function() {
+    $("#btnTestView").click(btnTestView);
+	$("#btnFlickrView").click(btnFlickrView);
+});
 
-// Kick everything off
-dispatcher.dispatch({type: dispatcher.action.INIT});
+function btnTestView() {
+	var view = require('./app/views/TestView');
+	var app = React.createElement(view);
+	React.render(app, document.getElementById('app'));
+	
+	dispatcher.dispatch({type: dispatcher.action.TEST_VIEW});
+}
+
+function btnFlickrView() {
+	var view = require('./app/views/FlickrView');
+	var app = React.createElement(view);
+	React.render(app, document.getElementById('app'));
+	
+	dispatcher.dispatch({type: dispatcher.action.FLICKR_VIEW});
+}
