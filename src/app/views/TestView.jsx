@@ -10,7 +10,6 @@ module.exports = React.createClass({
 	
 	componentWillMount: function(){
 		// Do something when the react component is about to be displayed for the first time
-		console.log(this.state.displayString);
 	},
 
 	componentDidMount: function() {
