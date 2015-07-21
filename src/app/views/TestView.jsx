@@ -2,6 +2,7 @@ var React = require('react');
 var dispatcher = require('../dispatcher/dispatcher');
 var mainstore = require('../stores/mainstore');
 var localestore = require('../stores/localestore');
+var ImageItemJsx = require('./ImageItem');
 
 module.exports = React.createClass({	
 	getInitialState: function() {
@@ -25,7 +26,8 @@ module.exports = React.createClass({
 						'http://i.imgur.com/QuqPveo.jpg', 'http://i.imgur.com/zrAxG9E.jpg'];
 						
 		var reactStrings = urlArray.map(function(string) {
-            return (<img src={string} width="100" height="100" key={string} > </img>);
+			// Create a sub react components to represent an image with some props
+			return (<ImageItemJsx url={string} title={string} key={string} />);
         });
 		
 		// Get the strings in the correct language from the localestore
