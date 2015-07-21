@@ -35,7 +35,7 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('copy_direct', function () {
-	gulp.src(['**/*.html', '**/*.png', 'favicon.ico', '**/*.css', ], {
+	gulp.src(['**/*.html', '**/*.png', 'favicon.ico', '**/*.css', 'jquery-2.1.4.min.js'], {
 		buffer : false
 	})
 	.pipe(gulp.dest(output));

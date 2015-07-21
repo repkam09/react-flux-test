@@ -4,10 +4,11 @@ var dispatcher = require('./app/dispatcher/dispatcher');
 // Register all of the stores with the dispatcher
 dispatcher.register(require('./app/stores/mainstore'));
 dispatcher.register(require('./app/stores/localestore'));
-dispatcher.register(require('./app/stores/todostore'));
+dispatcher.register(require('./app/stores/flickrstore'));
 
 // Select the view to display
-var view = require('./app/views/TestView');
+// var view = require('./app/views/TestView');
+var view = require('./app/views/FlickrView');
 var app = React.createElement(view);
 React.render(app, document.getElementById('app'));
 

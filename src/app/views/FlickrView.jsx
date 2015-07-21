@@ -3,7 +3,7 @@ var dispatcher = require('../dispatcher/dispatcher');
 
 module.exports = React.createClass({
 	getInitialState: function() {
-		return {};
+		return {flickrurlarray: []};
 	},
 	
 	componentWillMount: function(){
@@ -18,11 +18,10 @@ module.exports = React.createClass({
 		// Do something when the react component is no longer needed
 	},
 
-	render: function() {		
+	render: function() {
 		return (
 			<div>
-			
 			</div>
 		);
-	}s
+	}
 });
