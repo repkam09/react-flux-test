@@ -22,6 +22,10 @@ h1, h2, h3
 	color: #2B3F48;
 }
 
+.imageitem {
+	padding: 5;
+}
+
 .redText {
 	color: red;
 }

@@ -24,7 +24,7 @@ module.exports = React.createClass({
 	render: function() {
 		var images = this.state.urlArray.map(function(item){
 			return (
-				<ImageItemJsx key={item.url} url={item.url} />
+				<ImageItemJsx key={item.url} url={item.url} title={item.title} />
 			);
 		})
 		
