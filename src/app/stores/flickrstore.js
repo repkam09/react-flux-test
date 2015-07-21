@@ -29,8 +29,8 @@ function getFlickrImages() {
 	_store.emit('reset');
 	// Assign handlers immediately after making the request,
 	// and remember the jqXHR object for this request
-	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");
-	//ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=kodak");
+	//ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");
+	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=nature");
 }
 
 function ajaxGet(req_url) {
