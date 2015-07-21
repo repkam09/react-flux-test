@@ -20,6 +20,8 @@ module.exports = React.createClass({
 
 	componentWillUnmount: function() {
 		// Do something when the react component is no longer needed
+		flickrstore.removeListener('new_image', this.handleImage);
+		flickrstore.removeListener('reset', this.reset);
 	},
 
 	render: function() {
