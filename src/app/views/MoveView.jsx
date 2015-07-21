@@ -36,14 +36,15 @@ module.exports = React.createClass({
 		);
 	},
 	
-	handleImage : function(item) {		
+	handleImage : function(item) {
+		console.log("handle " + JSON.stringify(item));
 		var newArray = this.state.urlArray;
 		newArray.push(item);
 		this.setState({urlArray: newArray});	
 	},
 	
 	reset : function() {
-		console.log("flickrview reset");
+		console.log("moveview reset");
 		this.setState({urlArray: []});	
 	}
 });

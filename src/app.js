@@ -10,20 +10,34 @@ dispatcher.register(require('./app/stores/flickrstore'));
 $(document).ready(function() {
     $("#btnTestView").click(btnTestView);
 	$("#btnFlickrView").click(btnFlickrView);
+	$("#btnMoveView").click(btnMoveView);
+	
 });
 
 function btnTestView() {
 	var view = require('./app/views/TestView');
-	var app = React.createElement(view);
-	React.render(app, document.getElementById('app'));
+	reactGoView(view);
 	
 	dispatcher.dispatch({type: dispatcher.action.TEST_VIEW});
 }
 
 function btnFlickrView() {
 	var view = require('./app/views/FlickrView');
-	var app = React.createElement(view);
-	React.render(app, document.getElementById('app'));
+	reactGoView(view);
 	
 	dispatcher.dispatch({type: dispatcher.action.FLICKR_VIEW});
+}
+
+
+function btnMoveView() {
+	var view = require('./app/views/MoveView');
+	reactGoView(view);
+	
+	dispatcher.dispatch({type: dispatcher.action.MOVE_VIEW});
+}
+
+
+function reactGoView(view) {
+	var app = React.createElement(view);
+	React.render(app, document.getElementById('app'));
 }

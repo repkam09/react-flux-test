@@ -17,11 +17,16 @@ FlickrStore.prototype.actionHandler = function (action) {
 		case dispatcher.action.FLICKR_VIEW:
 			retval = getFlickrImages();
 			break;
+			
+		case dispatcher.action.MOVE_VIEW:
+			retval = getFlickrImages();
+			break;
 	}
 	return retval;
 };
 
 function getFlickrImages() {
+	_store.emit('reset');
 	// Assign handlers immediately after making the request,
 	// and remember the jqXHR object for this request
 	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");

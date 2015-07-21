@@ -19,18 +19,25 @@ MainStore.prototype.actionHandler = function (action) {
 	log.log("MainStore got an action: " + action.type);
 	switch (action.type) {
 		case dispatcher.action.TEST_VIEW:
-			retval = init();
+			retval = doTestView();
+			break;
+		case dispatcher.action.MOVE_VIEW:
+			retval = doMoveView();
 			break;
 	}
 	return retval;
 };
 
 // The thing to do on the INIT action from the dispatcher
-function init(){
-	log.log("run function init()");
+function doTestView(){
+	log.log("run function doTestView()");
 	_store.emit('some_event');
 }
 
+function doMoveView(){
+	log.log("run function doMoveView()");
+	_store.emit('some_event');
+}
 
 // Create an instance of the store and export it
 var _store = new MainStore();
