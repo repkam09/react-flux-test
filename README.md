@@ -1,6 +1,9 @@
 # Learning Flux, React, Gulp and More!
 This project exists to document some of my learnings with Flux, React, Gulp and other awesome web development tools.
 
+# Demo
+See a live demo of this project code here: https://repkam09.com/tools/react-flux-test/build/
+
 # Building
 Thanks to nodejs and npm this is extremely easy. Simply install nodejs/npm on your system, go to the project directory that you have cloned from here and type 'npm install' into a terminal to pull down the required packages.
 I install these locally, not globally, just to keep my system clean. If you want to install the packages globally you can use 'npm -g install' I believe.
