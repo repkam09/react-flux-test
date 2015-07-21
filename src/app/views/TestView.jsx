@@ -3,7 +3,6 @@ var dispatcher = require('../dispatcher/dispatcher');
 var mainstore = require('../stores/mainstore');
 var localestore = require('../stores/localestore');
 
-
 module.exports = React.createClass({	
 	getInitialState: function() {
 		return { displayString: "Hello World", someNumber: 0, someArray: ['test', 'test2', 'test3']};
@@ -23,9 +22,11 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
-		var urlArray = ['http://i.imgur.com/cqZK11x.jpg', 'http://i.imgur.com/D1TzTBZ.jpg', 'http://i.imgur.com/QuqPveo.jpg', 'http://i.imgur.com/zrAxG9E.jpg'];
+		var urlArray = ['http://i.imgur.com/cqZK11x.jpg', 'http://i.imgur.com/D1TzTBZ.jpg',
+						'http://i.imgur.com/QuqPveo.jpg', 'http://i.imgur.com/zrAxG9E.jpg'];
+						
 		var reactStrings = urlArray.map(function(string) {
-            return (<img src={string} width="100" height="100"> </img>);
+            return (<img src={string} width="100" height="100" key={string} > </img>);
         });
 		
 		var head_str = localestore.getTextString("head_str");
@@ -36,12 +37,14 @@ module.exports = React.createClass({
 		
 		return (
 			<div>
-			<h3> {head_str} </h3>
-				<p>{reactStrings}</p>
+				<h3> {head_str} </h3>
+				<div>
+					{reactStrings}
+				</div>
 				<p className="redText" > {red_str} </p>
-			<button onClick={this.handleClick} > {btn_str} </button>
-			<p> {clk_str} {this.state.someNumber} </p>
-			<button onClick={this.toggleLanguage} > {chg_lng} </button>	
+				<button onClick={this.handleClick} > {btn_str} </button>
+				<p> {clk_str} {this.state.someNumber} </p>
+				<button onClick={this.toggleLanguage} > {chg_lng} </button>	
 			</div>
 		);
 	},
