@@ -1,3 +1,5 @@
+// This class acts as a logger with different logging levels for 
+// various different messages. 
 module.exports = {
 	log: function (message) {
 		console.log('%c[i] ' + message, 'color:black');

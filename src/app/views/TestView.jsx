@@ -29,6 +29,7 @@ module.exports = React.createClass({
             return (<img src={string} width="100" height="100" key={string} > </img>);
         });
 		
+		// Get the strings in the correct language from the localestore
 		var head_str = localestore.getTextString("head_str");
 		var red_str = localestore.getTextString("red_str");
 		var btn_str = localestore.getTextString("btn_str");
@@ -49,11 +50,14 @@ module.exports = React.createClass({
 		);
 	},
 	
+	// A button click handler to increment the someNumber count
 	handleClick: function() {
 		var upCounter = this.state.someNumber + 1;
 		this.setState({someNumber: upCounter});
 	},
 	
+	// A button click handler to send a LANGUAGE event
+	// changing the current language before rerendering
 	toggleLanguage: function() {
 		dispatcher.dispatch({type: dispatcher.action.LANGUAGE});
 		this.setState({});
