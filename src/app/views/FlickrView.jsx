@@ -33,7 +33,7 @@ module.exports = React.createClass({
 		
 		return (
 			<div>
-				<p>This react component dynamically pulls the latest public images from Flickr and displays them! </p>
+				<p>This react component dynamically pulls the latest public images from my Flickr account and displays them! </p>
 				{images}
 			</div>
 		);
