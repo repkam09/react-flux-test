@@ -4,6 +4,8 @@ var log = require('./logging');
 var util = require('util');
 var dispatcher = require('../dispatcher/dispatcher');
 
+
+// Variables to keep track of the current locale
 var _currentLocale = 'en_us';
 var _localeNbt = 0;
 
@@ -39,12 +41,18 @@ var _localeTextData = {
 	th_th: th_th
 };
 
+
+// Constuctor for the LocaleStore
 function LocaleStore() {
 	EventEmitter.call(this);
 }
 
+// We need to be an eventemitter
 util.inherits(LocaleStore, EventEmitter);
 
+
+// actionHandler - callback for the dispatcher. Recieves actions
+// and decideds what to do with them.
 LocaleStore.prototype.actionHandler = function (action) {
 	var retval = null;
 	log.log('LocaleStore got an action: ' + action.type);
@@ -56,20 +64,24 @@ LocaleStore.prototype.actionHandler = function (action) {
 	return retval;
 };
 
-
+// public method to request a translated version of a string based on the
+// current language _currentLocale variable
 LocaleStore.prototype.getTextString = function(text_key) {
 	var localeData = _localeTextData[_currentLocale];
 	if ((typeof localeData).toLowerCase() === 'undefined' || localeData === null){
-		return '!' + text_key + '!';
+		return '' + text_key + '';
 	}
 
 	var result = localeData[text_key];
 	if ((typeof result).toLowerCase() === 'undefined' || result === null){
-		result = '?' + text_key + '?';
+		result = '' + text_key + '';
 	}
 	return result;
 };
 
+
+// Sets the _currentLocale variable by cycling through
+// the available languages that were defined above.
 function swapLanguage() {
 	_localeNbt++;
 	if (_localeNbt > 2) {
@@ -89,5 +101,7 @@ function swapLanguage() {
 	}
 }
 
+
+// Create an instance of the store and export it
 var _store = new LocaleStore();
 module.exports = _store;
