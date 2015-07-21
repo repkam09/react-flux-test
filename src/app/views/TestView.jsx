@@ -2,7 +2,7 @@ var React = require('react');
 var dispatcher = require('../dispatcher/dispatcher');
 var mainstore = require('../stores/mainstore');
 var localestore = require('../stores/localestore');
-var ImageItemJsx = require('./ImageItem');
+var ImageItemJsx = require('../components//ImageItem');
 
 module.exports = React.createClass({	
 	getInitialState: function() {

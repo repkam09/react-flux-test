@@ -1,7 +1,7 @@
 var React = require('react');
 var dispatcher = require('../dispatcher/dispatcher');
 var flickrstore = require('../stores/flickrstore');
-var ImageItemJsx = require('./ImageItem');
+var ImageItemJsx = require('../components/ImageItem');
 
 module.exports = React.createClass({
 	getInitialState: function() {
