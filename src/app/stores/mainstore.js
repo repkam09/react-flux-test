@@ -24,6 +24,9 @@ MainStore.prototype.actionHandler = function (action) {
 		case dispatcher.action.MOVE_VIEW:
 			retval = doMoveView();
 			break;
+		case dispatcher.action.WEATHER_VIEW:
+			retval = doWeatherView();
+			break;
 	}
 	return retval;
 };
@@ -38,6 +41,27 @@ function doMoveView(){
 	log.log("run function doMoveView()");
 	_store.emit('some_event');
 }
+
+function doWeatherView(){
+	log.log("run function doWeatherView()");
+	_store.emit('reset');
+	ajaxGet("http://api.openweathermap.org/data/2.5/weather?q=Rochester,NY");
+}
+
+
+function ajaxGet(req_url) {
+	log.log("GET Request to " + req_url);
+	var response = $.ajax({
+		method: "GET",
+		dataType: "jsonp",
+		url: req_url + "&APPID=e3b223ffb450c4c194866aaf95c60e0f",
+		success: function(data) {
+			console.log("Got Weather: " + JSON.stringify(data));
+			_store.emit('weather', data);
+		}
+	});
+}
+
 
 // Create an instance of the store and export it
 var _store = new MainStore();

@@ -30,7 +30,8 @@ MyDispatcher.prototype.action =  Object.freeze({
 	TEST_VIEW: 'test_view',
 	FLICKR_VIEW: 'flickr_view',
 	MOVE_VIEW: "move_view",
-	LANGUAGE: 'language'
+	LANGUAGE: 'language',
+	WEATHER_VIEW: 'weather_view'
 });
 
 module.exports = new MyDispatcher();

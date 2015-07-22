@@ -11,7 +11,7 @@ $(document).ready(function() {
     $("#btnTestView").click(btnTestView);
 	$("#btnFlickrView").click(btnFlickrView);
 	$("#btnMoveView").click(btnMoveView);
-	
+	$("#btnWeatherView").click(btnWeatherView);
 });
 
 function btnTestView(event) {
@@ -37,6 +37,14 @@ function btnMoveView(event) {
 	reactGoView(view);
 	
 	dispatcher.dispatch({type: dispatcher.action.MOVE_VIEW});
+}
+
+function btnWeatherView(event) {
+	event.preventDefault();
+	var view = require('./app/views/WeatherView');
+	reactGoView(view);
+	
+	dispatcher.dispatch({type: dispatcher.action.WEATHER_VIEW});
 }
 
 
