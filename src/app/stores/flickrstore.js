@@ -43,7 +43,7 @@ function ajaxGet(req_url) {
 	});
 }
 
-// Deal with the callback of the jsonp request. Grrr.
+// Deal with the callback of the jsonp request
 window["jsonFlickrFeed"] = function (data) {
 	var array = data.items;
 	array.forEach(function(item){
