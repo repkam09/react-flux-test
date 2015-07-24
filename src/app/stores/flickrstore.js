@@ -27,8 +27,6 @@ FlickrStore.prototype.actionHandler = function (action) {
 
 function getFlickrImages() {
 	_store.emit('reset');
-	// Assign handlers immediately after making the request,
-	// and remember the jqXHR object for this request
 	//ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json");
 	//ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=landscape,sky");
 	ajaxGet("https://api.flickr.com/services/feeds/photos_public.gne?format=json&id=135040308@N08");
