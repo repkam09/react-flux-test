@@ -29,7 +29,7 @@ MyDispatcher.prototype.register = function(self) {
 MyDispatcher.prototype.action =  Object.freeze({
 	TEST_VIEW: 'test_view',
 	FLICKR_VIEW: 'flickr_view',
-	MOVE_VIEW: "move_view",
+	LASTFM_VIEW: "lastfm_view",
 	LANGUAGE: 'language',
 	WEATHER_VIEW: 'weather_view'
 });

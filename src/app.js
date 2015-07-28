@@ -10,7 +10,7 @@ dispatcher.register(require('./app/stores/flickrstore'));
 $(document).ready(function() {
     $("#btnTestView").click(btnTestView);
 	$("#btnFlickrView").click(btnFlickrView);
-	$("#btnMoveView").click(btnMoveView);
+	$("#btnLastfmView").click(btnLastfmView);
 	$("#btnWeatherView").click(btnWeatherView);
 });
 
@@ -31,12 +31,12 @@ function btnFlickrView(event) {
 }
 
 
-function btnMoveView(event) {
+function btnLastfmView(event) {
 	event.preventDefault();
-	var view = require('./app/views/MoveView');
+	var view = require('./app/views/LastFmView');
 	reactGoView(view);
 	
-	dispatcher.dispatch({type: dispatcher.action.MOVE_VIEW});
+	dispatcher.dispatch({type: dispatcher.action.LASTFM_VIEW});
 }
 
 function btnWeatherView(event) {

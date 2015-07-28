@@ -10,8 +10,6 @@ module.exports = React.createClass({
 	
 	componentWillMount: function(){
 		// Do something when the react component is about to be displayed for the first time
-		flickrstore.on('new_image', this.handleImage);
-		flickrstore.on('reset', this.reset);
 	},
 
 	componentDidMount: function() {
@@ -19,21 +17,14 @@ module.exports = React.createClass({
 	},
 
 	componentWillUnmount: function() {
-		// Do something when the react component is no longer needed
-		flickrstore.removeListener('new_image', this.handleImage);
-		flickrstore.removeListener('reset', this.reset);
+		// Do something when the react component is no longer needed		
 	},
 
-	render: function() {
-		var images = this.state.urlArray.map(function(item){
-			return (
-				<ImageItemJsx key={item.url} url={item.url} title={item.title} />
-			);
-		})
-		
+	render: function() {		
 		return (
 			<div>
-				{images}
+				<p>LastFM Data for repkam09</p>
+				
 			</div>
 		);
 	},
@@ -46,7 +37,7 @@ module.exports = React.createClass({
 	},
 	
 	reset : function() {
-		console.log("moveview reset");
+		console.log("lastfmview reset");
 		this.setState({urlArray: []});	
 	}
 });
